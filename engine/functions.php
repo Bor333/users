@@ -1,6 +1,5 @@
 <?php
 
-
 function render($page, $params = []) {
     return renderTemplate(LAYOUTS_DIR . 'main', [
         'menu' => renderTemplate('menu', $params),
