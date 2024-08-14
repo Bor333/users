@@ -1,5 +1,10 @@
 <?php
 include dirname(__DIR__) . '/engine/config.php';
-include ROOT . '/engine/controller.php';
+
+$db = getDb();
+$usersResult = getAllUsers($db);
+$params = ['usersResult' => $usersResult];
+echo render('index', $params);
+
 
 
