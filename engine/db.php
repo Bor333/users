@@ -1,6 +1,11 @@
 <?php
 function getDb()
 {
-    return mysqli_connect('users',  'sibers', 'l71oH/]!xuJHEU1i', 'sibers');
+    static $db = '';
+    if (empty($db)) {
+        $db = mysqli_connect('users',  'sibers', 'l71oH/]!xuJHEU1i', 'sibers');
+    }
+    return $db;
 }
+
 
