@@ -1,7 +1,11 @@
 <?php
-function saveUser($db)
+function saveUser($db, $data)
 {
-    $sql = "INSERT INTO `users`(`first_name`, `last_name`, `gender`, `birth_date`) VALUES ('[value-2]','[value-3]','[value-4]','[value-5]')";
+    $first_name = $data['first_name'];
+    $last_name = $data['last_name'];
+    $gender = $data['gender'];
+    $birth_date = $data['birth_date'];
+    $sql = "INSERT INTO `users`(`first_name`, `last_name`, `gender`, `birth_date`) VALUES ('{$first_name}','{$last_name}','{$gender}','{$birth_date}')";
     $usersResult = mysqli_query($db, $sql);
     return $usersResult;
 }
