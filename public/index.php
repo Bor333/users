@@ -20,6 +20,11 @@ switch ($_SERVER['REQUEST_URI']) {
         saveUser($db, $data);
         header('Location: /');
         break;
+    case '/delete':
+        $id = $_POST['id'];
+        deleteUser($db, $id);
+        header('Location: /');
+        break;
 }
 
 echo render($page, $params);
