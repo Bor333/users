@@ -8,7 +8,10 @@
     <title>Admin page</title>
 </head>
 <body>
-<?=$menu?>
-<?=$content?>
+<form method="post" action="/logout">
+    <input type="submit" value="logout">
+</form>
+<?= $menu ?>
+<?= $content ?>
 </body>
 </html>
