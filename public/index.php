@@ -22,6 +22,14 @@ if ($isAdmin !== true) {
         case '/add':
             $page = 'add';
             break;
+        case '/insert':
+            $data['first_name'] = $_POST['first_name'];
+            $data['last_name'] = $_POST['last_name'];
+            $data['gender'] = $_POST['gender'];
+            $data['birth_date'] = $_POST['birth_date'];
+            addUser($db, $data);
+            header('Location: /');
+            break;
         case '/save':
             $data['id'] = $_POST['id'];
             $data['first_name'] = $_POST['first_name'];
