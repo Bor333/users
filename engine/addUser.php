@@ -1,5 +1,5 @@
 <?php
-function saveUser($db, $data)
+function addUser($db, $data)
 {
     $first_name = $data['first_name'];
     $last_name = $data['last_name'];
