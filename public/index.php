@@ -13,12 +13,12 @@ switch ($_SERVER['REQUEST_URI']) {
         $page = 'add';
         break;
     case '/save':
-        var_dump($data); die();
+        $data['id'] = $_POST['id'];
         $data['first_name'] = $_POST['first_name'];
         $data['last_name'] = $_POST['last_name'];
         $data['gender'] = $_POST['gender'];
         $data['birth_date'] = $_POST['birth_date'];
-        addUser($db, $data);
+        saveUser($db, $data);
         header('Location: /');
         break;
     case '/delete':
@@ -33,8 +33,6 @@ switch ($_SERVER['REQUEST_URI']) {
         $params['gender'] = $_POST['gender'];
         $params['birth_date'] = $_POST['birth_date'];
         $page = 'update';
-
-//        updateUser($data);
         break;
 }
 
